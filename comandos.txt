@@ -1,0 +1,16 @@
+-- iniciais --
+composer create-project --prefer-dist laravel/laravel carrinhoDeCompras 5.3
+php artisan make:model Produto -m
+php artisan make:model CupomDesconto -m
+php artisan migrate
+php artisan make:controller HomeController
+php artisan make:controller Admin/ProdutoController
+php artisan make:controller Admin/CupomDescontoController
+php artisan make:auth
+php artisan serve
+
+-- inicialização carrinho --
+php artisan make:model Pedido -m
+php artisan make:model PedidoProduto -m
+php artisan migrate
+php artisan make:controller CarrinhoController
